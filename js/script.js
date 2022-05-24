@@ -93,7 +93,7 @@ function initHeader() {
 			document.body.classList.toggle('_lock');
 			iconMenu.classList.toggle('_active');
 			menuBody.classList.toggle('_active');
-			btt.classList.remove("back-to-top_visible")
+			btt.classList.remove("visible")
 		});
 	}
 }
