@@ -4,10 +4,10 @@ function initBackToTopButton() {
 	const backToTopButton = document.querySelector('.back-to-top');
 
 	if (backToTopButton) {
-		backToTopButton.addEventListener("click", () => { window.scrollTo({top: 0, behavior: "smooth"}) });
+		backToTopButton.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }) });
 	}
 
-	document.addEventListener('scroll', () => { 
+	document.addEventListener('scroll', () => {
 		if (window.pageYOffset > 150 || document.documentElement.scrollTop > 150) {
 			backToTopButton.classList.add('back-to-top_visible');
 		}
@@ -18,13 +18,13 @@ function initBackToTopButton() {
 }
 
 function moveContentToFitHeader() {
-	const _resize = () => { 
+	const _resize = () => {
 		const newHeight = document.querySelector(".header").clientHeight || document.querySelector(".menu__burg").clientHeight
 		const content = document.querySelector(".content")
-		
-		content.style.marginTop = `${newHeight}px` 
+
+		content.style.marginTop = `${newHeight}px`
 	}
-	
+
 	window.addEventListener("load", _resize)
 	window.addEventListener("resize", _resize)
 }
@@ -74,17 +74,18 @@ function initHeader() {
 	} else {
 		document.body.classList.add('_pc');
 	}
-	
+
 	const iconMenu1 = document.querySelector('.menu__icon');
 	if (iconMenu1) {
 		const menuBody = document.querySelector('.menu__body');
 		iconMenu1.addEventListener("click", function (e) {
 			document.body.classList.toggle('_lock');
+			document.html.classList.toggle('_lock');
 			iconMenu1.classList.toggle('_active');
 			menuBody.classList.toggle('_active');
 		});
 	}
-	
+
 	const btt = document.querySelector(".back-to-top");
 	const iconMenu = document.querySelector('.menu__icon-burger');
 	if (iconMenu) {
@@ -93,7 +94,7 @@ function initHeader() {
 			document.body.classList.toggle('_lock');
 			iconMenu.classList.toggle('_active');
 			menuBody.classList.toggle('_active');
-			btt.classList.remove("visible")
+			btt.classList.remove("back-to-top_visible")
 		});
 	}
 }
